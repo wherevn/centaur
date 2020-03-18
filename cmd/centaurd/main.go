@@ -1,17 +1,16 @@
 package main
 
 import (
-    "log"
-    "os"
-
-    "github.com/joho/godotenv"
+	"centaur/osenv"
+	"github.com/joho/godotenv"
+	"log"
 )
 
 func main() {
-    if err := godotenv.Load(); err != nil {
-        log.Fatalf("godotenv.Load() failed: %v", err)
-    }
-    httpServerAddr := os.Getenv("HTTP_SERVER_ADDR")
+	if err := godotenv.Load(); err != nil {
+		log.Fatalf("godotenv.Load() failed: %v", err)
+	}
+	httpServerAddr := osenv.String("HTTP_SERVER_ADDR")
 
-    log.Printf("httpServerAddr: %v", httpServerAddr)
+	log.Printf("httpServerAddr: %v", httpServerAddr)
 }
