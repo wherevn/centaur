@@ -1,0 +1,25 @@
+run:
+  timeout: 30m
+  tests: true
+  skip-dirs:
+    - scripts
+  skip-dirs-use-default: true # vendor$, third_party$, testdata$, examples$, Godeps$, builtin$
+  modules-download-mode: vendor
+
+output:
+  format: colored-line-number
+  print-issued-lines: false
+  print-linter-name: true
+  uniq-by-line: true
+
+linters:
+  disable-all: true
+  enable:
+    - golint
+    - gofmt
+    - govet
+  fast: false
+
+linters-settings:
+  golint:
+    min-confidence: 0.8

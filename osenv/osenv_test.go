@@ -65,7 +65,7 @@ func TestInt64_OK(t *testing.T) {
 	}
 }
 
-func TestString(t *testing.T) {
+func TestString_OK(t *testing.T) {
 	var (
 		key      = "TEST_INT64_VALUE"
 		expected = "test string"
